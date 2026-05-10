@@ -1,1 +1,1 @@
-# AIEvalTool_Case_Study
+# AIEvalTool Technical Assignment
