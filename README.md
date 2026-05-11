@@ -43,16 +43,36 @@ Once, files are installed and configurations made, run ollama, importer script, 
 I used the following to run tests:
 ```python main.py --testplan-id 1  --max-testcases 30 --config "config.json" --domain-strict --execute```
 
---test-plan-id = 1 indicates Responsible AI evaluation test
---max-testcases = 30 indicates 30 prompts were sent to the whatsapp based chatbot
---domain-strict is supposed to ensure agriculture is the only domain on which quesries would be asked (although I am unsure if this parameter actually works as required)
+--test-plan-id = 1 indicates Responsible AI evaluation test \\
+--max-testcases = 30 indicates 30 prompts were sent to the whatsapp based chatbot \\
+--domain-strict is supposed to ensure agriculture is the only domain on which quesries would be asked (although I am unsure if this parameter actually works as required) \\
 
 This will start the selenium automation (ensure the Xpaths are apropriate), and the queries would be sent and responses wiuld be stored in the database. I did not add any Datapoints but used the ones already in the DataPoints.json file by default as they had sufficient agriculture examples for a pilot testing.
 
 I used the responsible AI test suite with 30 testcases as farming in India requires highly context specific information and often deals with smallholder farmers where information needs to be carefully shared. 30 testcases is a parsimonious number typically used to justify statistical significance, though in this case statistical significane was not a necessity, 30 seemed like a large enough number that my personal computer could handle in limited time.
 
 ## Analysis and code-fix
-Once the test cases are run, you have to move to the response analysis folder and run the python code with the RUN name generated automatically during running tests. This will perform the AI evalution based on the selected testplan and strategies in the tool. I faced multiple errors in this, the strategies were not being recognized, upon doing some RCA and a little help from co-pilot and gemini, multiple lines had to be addeed to the ./data/defaults.json file linking the strategy to the necessary models, data source, response types and more. Once, this was done, the analysis ran fine and as expected.
+Once the test cases are run, you have to move to the response analysis folder and run the python code with the RUN name generated automatically during running tests. This will perform the AI evalution based on the selected testplan and strategies in the tool. I faced multiple errors in this, the strategies were not being recognized, upon doing some RCA and a little help from co-pilot and gemini, multiple lines had to be addeed to the ./data/defaults.json file linking the strategy to the necessary models, data source, response types and more, example given below. Once, this was done, the analysis ran fine and as expected.
+```
+.
+.
+.
+"bias_detection": {
+  "model_name": "llama3.2:latest",
+  "bias_types": ["gender", "race", "religion", "age", "socioeconomic"]
+},
+"toxicity": {
+  "threshold": 0.5,
+  "model_name": "llama3.2:latest"
+},
+"hallucination": {
+  "model_name": "llama3.2:latest",
+  "threshold": 0.5
+},
+.
+.
+.
+```
 
 ## Report and PDf output
 Finally, once analysis was done the report was generated using the necessary command. The PDf and JSOn can be found in the repo having names
