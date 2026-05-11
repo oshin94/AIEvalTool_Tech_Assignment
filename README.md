@@ -10,7 +10,7 @@ I started using option A (Evaluate and Report) but realized that the code was no
 
 ## 
 I downloaded the source file from the provided link i.e., AIEvaltool Version 1.2 (latest version is 2.0 but as per the link provided in the assignment, I used version 1.2)
-Link provided: https://github.com/cerai-iitm/AIEvaluationTool
+Link provided: https://github.com/cerai-iitm/AIEvaluationTool/releases/tag/v1.2
 
 The readme.md in the source provides for the initial setup and configuration which largely involved the following:
 
