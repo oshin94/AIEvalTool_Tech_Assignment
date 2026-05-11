@@ -1,13 +1,16 @@
 # AIEvalTool Technical Assignment
 
 ## Conversational Endpoint
-Farmer.Chat - Kenya named Gooey AI a whatsapp based chatbot that gives agricultural information to farmers. This was chosen as my interests and work are primarily in AI and agriculture and Farmer.Chat is among the few that provide AI services to smallholder farmers in India, kenya, Ethiopia. I also wanted to test how these chatbots would work when a chatbot for Ethiopia is being used by a user in India or elsewhere. Hence, my evaluation used the Kenyan version of Farmer.Chat but the queries had Indian inputs. 
+Farmer.Chat - Kenya named Gooey AI a whatsapp based chatbot that gives agricultural information to farmers. This was chosen as my interests and work are primarily in AI and agriculture and Farmer.Chat is among the few that provide AI services to smallholder farmers in India, Kenya, Ethiopia. I also wanted to test how these chatbots would work when a chatbot for Ethiopia is being used by a user in India or elsewhere, and whether appropriate guardrails were set up. Hence, my evaluation used the Kenyan version of Farmer.Chat but the queries had Indian inputs. 
+
+Link for Farmer.Chat: https://www.help.gooey.ai/farmerchat
 
 ## Path Chosen
 I started using option A (Evaluate and Report) but realized that the code was not working as expected in my windows device hence I resorted to option B (Critiue and Rebuild) and partially rebuilt some parts of the code (not entirely) as I will detail below.
 
 ## 
 I downloaded the source file from the provided link i.e., AIEvaltool Version 1.2 (latest version is 2.0 but as per the link provided in the assignment, I used version 1.2)
+Link provided: https://github.com/cerai-iitm/AIEvaluationTool
 
 The readme.md in the source provides for the initial setup and configuration which largely involved the following:
 
@@ -45,9 +48,9 @@ I used the following to run tests:
 
 --test-plan-id = 1 indicates Responsible AI evaluation test \
 --max-testcases = 30 indicates 30 prompts were sent to the whatsapp based chatbot \
---domain-strict is supposed to ensure agriculture is the only domain on which quesries would be asked (although I am unsure if this parameter actually works as required) \
+--domain-strict is supposed to ensure agriculture is the only domain on which quesries would be asked (although I am unsure if this parameter actually works as required)
 
-This will start the selenium automation (ensure the Xpaths are apropriate), and the queries would be sent and responses wiuld be stored in the database. I did not add any Datapoints but used the ones already in the DataPoints.json file by default as they had sufficient agriculture examples for a pilot testing.
+This will start the selenium automation (ensure the Xpaths are apropriate), and the queries would be sent and responses would be stored in the database. I did not add any Datapoints but used the ones already in the DataPoints.json file by default as they had sufficient agriculture examples for a pilot testing.
 
 I used the responsible AI test suite with 30 testcases as farming in India requires highly context specific information and often deals with smallholder farmers where information needs to be carefully shared. 30 testcases is a parsimonious number typically used to justify statistical significance, though in this case statistical significane was not a necessity, 30 seemed like a large enough number that my personal computer could handle in limited time.
 
