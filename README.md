@@ -17,7 +17,7 @@ The readme.md in the source provides for the initial setup and configuration whi
 - Installing software requirements
 - Using SqLite (default)
 - Creating env variable
-- Using Llama3.2:latest model with Ollama (not qwen3.2, as it requires a lot of RAM, not feasible on PCs)
+- Using Llama3.2:latest model with Ollama (not qwen3.2, as it requires a lot of RAM, not feasible on PCs, I did not have the necessary RAM on my system)
 - The below target is set in config files in `src/app/importer/config.json`, `src/app/testcase_executor/config.json` & `src/app/response_analyzer/config.json`
 
 ```json
@@ -25,7 +25,7 @@ The readme.md in the source provides for the initial setup and configuration whi
         "application_type": "WHATSAPP_WEB",
         "application_name": "Gooey AI",
         "application_url": "https://web.whatsapp.com/",
-        "agent_name": "4253105658"
+        "agent_name": "4253105658" # this number is critical as this value is used for searching on whatsapp web
     }
 ```
 Similarly, the db type was set in config files as below:
