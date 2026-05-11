@@ -43,9 +43,9 @@ Once, files are installed and configurations made, run ollama, importer script, 
 I used the following to run tests:
 ```python main.py --testplan-id 1  --max-testcases 30 --config "config.json" --domain-strict --execute```
 
---test-plan-id = 1 indicates Responsible AI evaluation test \\
---max-testcases = 30 indicates 30 prompts were sent to the whatsapp based chatbot \\
---domain-strict is supposed to ensure agriculture is the only domain on which quesries would be asked (although I am unsure if this parameter actually works as required) \\
+--test-plan-id = 1 indicates Responsible AI evaluation test \
+--max-testcases = 30 indicates 30 prompts were sent to the whatsapp based chatbot \
+--domain-strict is supposed to ensure agriculture is the only domain on which quesries would be asked (although I am unsure if this parameter actually works as required) \
 
 This will start the selenium automation (ensure the Xpaths are apropriate), and the queries would be sent and responses wiuld be stored in the database. I did not add any Datapoints but used the ones already in the DataPoints.json file by default as they had sufficient agriculture examples for a pilot testing.
 
@@ -74,7 +74,7 @@ Once the test cases are run, you have to move to the response analysis folder an
 .
 ```
 
-## Report and PDf output
+## Report and PDF output
 Finally, once analysis was done the report was generated using the necessary command. The PDf and JSOn can be found in the repo having names
 ```
 AI_Evaluation_Report_Gooey AI_sequence-sparse-magazine-mauris.pdf
